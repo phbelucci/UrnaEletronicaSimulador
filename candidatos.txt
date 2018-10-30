@@ -1,0 +1,4 @@
+PRESIDENTE;BART;11;PO;"C:\Users\phbel\source\repos\exercicioLp2\exercicioLp2\img\bart.jpg";
+PRESIDENTE;HOMER;10;PPO;"C:\Users\phbel\source\repos\exercicioLp2\exercicioLp2\img\homer.jpg";
+PRESIDENTE;MARGE;20;PPO;"C:\Users\phbel\source\repos\exercicioLp2\exercicioLp2\img\marge.jpg";
+PRESIDENTE;BURT;25;RRP;"C:\Users\phbel\source\repos\exercicioLp2\exercicioLp2\img\marge.jpg";
