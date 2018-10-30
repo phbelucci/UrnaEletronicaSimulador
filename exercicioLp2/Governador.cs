@@ -7,45 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace exercicioLp2
 {
-    public partial class deputadoFederal : Form
+    public partial class Governador : Form
     {
         public int numeroClicado = 0;
         public int casaAtual = 0;
-        
-        
 
-        public deputadoFederal()
+        public Governador()
         {
             InitializeComponent();
-            partidoCandidato.Text = null;
             primDigito.Text = null;
             segDigito.Text = null;
-            terDigito.Text = null;
-            quaDigito.Text = null;
 
-        }
-
-        private void deputadoFederal_Load(object sender, EventArgs e)
-        {
-            nomeCargo.Text = "DEPUTADO FEDERAL";
         }
 
         private void branco_Click(object sender, EventArgs e)
         {
             primDigito.Text = "-";
             segDigito.Text = "-";
-            terDigito.Text = "-";
-            quaDigito.Text = "-"; 
             casaAtual = 0;
             numeroClicado = 0;
             nomeCandidato.Text = "BRANCO";
             partidoCandidato.Text = "BRANCO";
             fotoCandidato.BackgroundImage = null;
-
         }
 
         private void tecla1_Click(object sender, EventArgs e)
@@ -114,19 +100,9 @@ namespace exercicioLp2
             numeroClicado = 0;
             primDigito.Text = null;
             segDigito.Text = null;
-            terDigito.Text = null;
-            quaDigito.Text = null;
             nomeCandidato.Text = null;
             partidoCandidato.Text = null;
             fotoCandidato.BackgroundImage = null;
-
-        }
-
-        private void confirma_Click(object sender, EventArgs e)
-        {
-            string numeroCandidatoEscolhido = primDigito.Text + segDigito.Text + terDigito.Text + quaDigito.Text;
-            MessageBox.Show("O número do candidato é: "+numeroCandidatoEscolhido);
-            Close();
         }
 
         public void insereNumero(int numeroClicado)
@@ -148,41 +124,39 @@ namespace exercicioLp2
                         segDigito.Text = Convert.ToString(numeroClicado);
                     }
                     break;
-                case 3:
-                    if ((segDigito.Text != "") && (terDigito.Text == ""))
-                    {
-                        terDigito.Text = Convert.ToString(numeroClicado);
-                    }
-                    break;
-                case 4:
-                    if ((terDigito.Text != "") && (quaDigito.Text == ""))
-                    {
-                        quaDigito.Text = Convert.ToString(numeroClicado);
-                    }
-                    break;
-                
+               
+
             }
-            string candidatoEscolhido = (primDigito.Text + segDigito.Text + terDigito.Text + quaDigito.Text);
-            if (quaDigito.Text != "") {
-
-
+            string candidatoEscolhido = (primDigito.Text + segDigito.Text);
+            if (segDigito.Text != "")
+            {
                 try
                 {
-                    Conexao conectar = new Conexao(candidatoEscolhido, "DEPUTADO FEDERAL");
+                    Conexao conectar = new Conexao(candidatoEscolhido, "GOVERNADOR");
                     nomeCandidato.Text = conectar.getNome();
                     partidoCandidato.Text = conectar.getPartido();
-                    fotoCandidato.BackgroundImage = Image.FromFile(conectar.getFoto());
+                    fotoCandidato.BackgroundImage = Image.FromFile("@"+conectar.getFoto());
                 }
                 catch
                 {
-                    
-                    fotoCandidato.BackgroundImage = null;
+                    fotoCandidato.BackgroundImage = Image.FromFile(@"C:\Users\phbel\Desktop\ADS-2018-IFSP\2_SEMESTRE\LP2\LISTA_URNA\exercicioLp2\img\avatar.png");
                 }
+
+
             }
 
         }
 
-
+        private void Governador_Load(object sender, EventArgs e)
+        {
+            nomeCargo.Text = "GOVERNADOR";
         }
-    
+
+        private void confirma_Click_1(object sender, EventArgs e)
+        {
+            string numeroCandidatoEscolhido = primDigito.Text + segDigito.Text;
+            MessageBox.Show("O número do candidato é: " + numeroCandidatoEscolhido);
+            Close();
+        }
+    }
 }

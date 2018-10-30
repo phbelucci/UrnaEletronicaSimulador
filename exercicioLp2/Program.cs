@@ -17,8 +17,12 @@ namespace exercicioLp2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new inicioEleicao());
             Application.Run(new deputadoFederal());
+            Application.Run(new DeputadoEstadual());
             Application.Run(new Senador());
+            Application.Run(new Governador());
+            Application.Run(new Presidente());
             
 
 

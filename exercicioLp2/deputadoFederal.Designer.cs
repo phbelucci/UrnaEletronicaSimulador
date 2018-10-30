@@ -35,7 +35,6 @@
             this.terDigito = new System.Windows.Forms.Label();
             this.quaDigito = new System.Windows.Forms.Label();
             this.branco = new System.Windows.Forms.PictureBox();
-            this.quiDigito = new System.Windows.Forms.Label();
             this.nomeCargo = new System.Windows.Forms.Label();
             this.nomeCandidato = new System.Windows.Forms.Label();
             this.partidoCandidato = new System.Windows.Forms.Label();
@@ -121,14 +120,6 @@
             this.branco.TabIndex = 17;
             this.branco.TabStop = false;
             this.branco.Click += new System.EventHandler(this.branco_Click);
-            // 
-            // quiDigito
-            // 
-            this.quiDigito.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quiDigito.Location = new System.Drawing.Point(401, 201);
-            this.quiDigito.Name = "quiDigito";
-            this.quiDigito.Size = new System.Drawing.Size(37, 46);
-            this.quiDigito.TabIndex = 16;
             // 
             // nomeCargo
             // 
@@ -333,7 +324,6 @@
             this.Controls.Add(this.nomeCandidato);
             this.Controls.Add(this.nomeCargo);
             this.Controls.Add(this.branco);
-            this.Controls.Add(this.quiDigito);
             this.Controls.Add(this.quaDigito);
             this.Controls.Add(this.terDigito);
             this.Controls.Add(this.segDigito);
@@ -371,7 +361,6 @@
         public System.Windows.Forms.Label terDigito;
         public System.Windows.Forms.Label quaDigito;
         private System.Windows.Forms.PictureBox branco;
-        public System.Windows.Forms.Label quiDigito;
         private System.Windows.Forms.Label nomeCargo;
         private System.Windows.Forms.Label nomeCandidato;
         private System.Windows.Forms.Label partidoCandidato;

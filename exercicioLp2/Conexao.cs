@@ -22,9 +22,10 @@ namespace exercicioLp2
 
             string numeroescolhido = numeroescolhidoParametro;
             string cargoCandidato = cargoCandidatoParametro;
-            conectar();
+            conectarBuscarCandidato();
+           
 
-            void conectar()
+            void conectarBuscarCandidato()
             {
                 
                 try
@@ -44,24 +45,17 @@ namespace exercicioLp2
                     buscaCandidato.Parameters.Add("@cargo_candidato", MySqlDbType.String).Value = cargoCandidato;
 
 
-                    MySqlCommand insereVotos = new MySqlCommand("INSERT INTO dados_candidatos(votos_candidato) values (?) WHERE id_candidato = ?", conexao);
-                    insereVotos.Parameters.Clear();
-                    int voto = 1;
-                    insereVotos.Parameters.Add("@voto", MySqlDbType.Int32).Value = voto;
-                    insereVotos.Parameters.Add("@id_candidato", MySqlDbType.Int64).Value = Convert.ToInt64(numeroescolhido);
-                    insereVotos.Parameters.Add("@cargo_candidato", MySqlDbType.String).Value = cargoCandidato;
+                   
 
                     //comando para executar Query (SELECT, INSERT, ETC...)
-                    try { 
+                   
                         buscaCandidato.CommandType = CommandType.Text;
-                        insereVotos.CommandType = CommandType.Text;
+                     
                         Console.WriteLine("Dados consultados e gravados com sucesso!");
-                    }
-                    catch
-                    {
+                    
                         Console.WriteLine("Dados não gravados!");
 
-                    }
+                    
                     //recebe o conteudo do banco
                     MySqlDataReader lerDados;
                     lerDados = buscaCandidato.ExecuteReader();
@@ -89,7 +83,6 @@ namespace exercicioLp2
 
             }
 
-            
 
         }
         public string getNome()

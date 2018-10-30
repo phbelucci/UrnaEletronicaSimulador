@@ -62,11 +62,23 @@
     <Compile Include="deputadoFederal.Designer.cs">
       <DependentUpon>deputadoFederal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Governador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Governador.Designer.cs">
+      <DependentUpon>Governador.cs</DependentUpon>
+    </Compile>
     <Compile Include="inicioEleicao.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="inicioEleicao.Designer.cs">
       <DependentUpon>inicioEleicao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presidente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presidente.Designer.cs">
+      <DependentUpon>Presidente.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,8 +94,14 @@
     <EmbeddedResource Include="deputadoFederal.resx">
       <DependentUpon>deputadoFederal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Governador.resx">
+      <DependentUpon>Governador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="inicioEleicao.resx">
       <DependentUpon>inicioEleicao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presidente.resx">
+      <DependentUpon>Presidente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -130,6 +130,7 @@ namespace exercicioLp2
         {
             string numeroCandidatoEscolhido = primDigito.Text + segDigito.Text + terDigito.Text + quaDigito.Text + quiDigito.Text;
             MessageBox.Show("O número do candidato é: "+numeroCandidatoEscolhido);
+            Close();
         }
 
         public void insereNumero(int numeroClicado)
@@ -176,42 +177,17 @@ namespace exercicioLp2
             {
                 try
                 {
-
-                    //instancia uma variavel do tipo MySqlConnection como os parametros do server
-                    MySqlConnection conexao = new MySqlConnection("server=localhost;port=3306;UserId=root;database=candidatos; password =");
-
-                    //abre conexão com BD
-                    conexao.Open();
-                    Console.WriteLine("Conectado ao banco...");
-
-                    //comando para buscar dados no banco
-                    MySqlCommand buscaCandidato = new MySqlCommand("SELECT id_candidato, nome_candidato, partido_candidato, cargo_candidato, foto_candidato FROM dados_candidatos WHERE id_candidato = ?", conexao);
-                    buscaCandidato.Parameters.Clear();
-                    buscaCandidato.Parameters.Add("@id_candidato", MySqlDbType.String).Value = candidatoEscolhido;
-
-                    //comando para executar Query (SELECT, INSERT, ETC...)
-                    buscaCandidato.CommandType = CommandType.Text;
-
-                    //recebe o conteudo do banco
-                    MySqlDataReader lerDados;
-                    lerDados = buscaCandidato.ExecuteReader();
-                    lerDados.Read();
-
-                    nomeCandidato.Text = lerDados.GetString(1);
-                    partidoCandidato.Text = lerDados.GetString(2);
-                    fotoCandidato.BackgroundImage = Image.FromFile(@"" + lerDados.GetString(4));
-
-                    //fecha conexão com BD
-                    conexao.Close();
-                    Console.WriteLine("Conexão com banco finalizada!");
-
+                    Conexao conectar = new Conexao(candidatoEscolhido, "DEPUTADO ESTADUAL");
+                    nomeCandidato.Text = conectar.getNome();
+                    partidoCandidato.Text = conectar.getPartido();
+                    fotoCandidato.BackgroundImage = Image.FromFile("@"+conectar.getFoto());
                 }
-                catch (Exception erro)
+                catch
                 {
-
-                    MessageBox.Show("Candidato Não Encontrado!\n\n\nPARA USO DE TI:\n" + erro);
-
+                    fotoCandidato.BackgroundImage = Image.FromFile(@"C:\Users\phbel\Desktop\ADS-2018-IFSP\2_SEMESTRE\LP2\LISTA_URNA\exercicioLp2\img\avatar.png");
                 }
+
+                
             }
 
 

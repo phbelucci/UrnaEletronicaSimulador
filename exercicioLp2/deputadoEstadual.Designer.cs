@@ -125,7 +125,7 @@
             // quiDigito
             // 
             this.quiDigito.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quiDigito.Location = new System.Drawing.Point(401, 201);
+            this.quiDigito.Location = new System.Drawing.Point(400, 201);
             this.quiDigito.Name = "quiDigito";
             this.quiDigito.Size = new System.Drawing.Size(37, 46);
             this.quiDigito.TabIndex = 16;
