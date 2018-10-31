@@ -23,12 +23,7 @@ namespace exercicioLp2
             Application.Run(new Senador());
             Application.Run(new Governador());
             Application.Run(new Presidente());
-            
-
-
-            
-
-
+            Application.Exit();
 
         }
     }

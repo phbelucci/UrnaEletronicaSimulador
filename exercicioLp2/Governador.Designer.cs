@@ -87,6 +87,7 @@
             this.corrige.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.corrige.TabIndex = 57;
             this.corrige.TabStop = false;
+            this.corrige.Click += new System.EventHandler(this.corrige_Click);
             // 
             // tecla0
             // 
@@ -97,6 +98,7 @@
             this.tecla0.Size = new System.Drawing.Size(69, 65);
             this.tecla0.TabIndex = 56;
             this.tecla0.TabStop = false;
+            this.tecla0.Click += new System.EventHandler(this.tecla0_Click);
             // 
             // tecla9
             // 
@@ -107,6 +109,7 @@
             this.tecla9.Size = new System.Drawing.Size(69, 65);
             this.tecla9.TabIndex = 55;
             this.tecla9.TabStop = false;
+            this.tecla9.Click += new System.EventHandler(this.tecla9_Click);
             // 
             // tecla8
             // 
@@ -117,6 +120,7 @@
             this.tecla8.Size = new System.Drawing.Size(69, 65);
             this.tecla8.TabIndex = 54;
             this.tecla8.TabStop = false;
+            this.tecla8.Click += new System.EventHandler(this.tecla8_Click);
             // 
             // tecla7
             // 
@@ -127,6 +131,7 @@
             this.tecla7.Size = new System.Drawing.Size(69, 65);
             this.tecla7.TabIndex = 53;
             this.tecla7.TabStop = false;
+            this.tecla7.Click += new System.EventHandler(this.tecla7_Click);
             // 
             // tecla6
             // 
@@ -137,6 +142,7 @@
             this.tecla6.Size = new System.Drawing.Size(69, 65);
             this.tecla6.TabIndex = 52;
             this.tecla6.TabStop = false;
+            this.tecla6.Click += new System.EventHandler(this.tecla6_Click);
             // 
             // tecla5
             // 
@@ -147,6 +153,7 @@
             this.tecla5.Size = new System.Drawing.Size(69, 65);
             this.tecla5.TabIndex = 51;
             this.tecla5.TabStop = false;
+            this.tecla5.Click += new System.EventHandler(this.tecla5_Click);
             // 
             // tecla4
             // 
@@ -157,6 +164,7 @@
             this.tecla4.Size = new System.Drawing.Size(69, 65);
             this.tecla4.TabIndex = 50;
             this.tecla4.TabStop = false;
+            this.tecla4.Click += new System.EventHandler(this.tecla4_Click);
             // 
             // tecla3
             // 
@@ -167,6 +175,7 @@
             this.tecla3.Size = new System.Drawing.Size(69, 65);
             this.tecla3.TabIndex = 49;
             this.tecla3.TabStop = false;
+            this.tecla3.Click += new System.EventHandler(this.tecla3_Click);
             // 
             // tecla2
             // 
@@ -177,6 +186,7 @@
             this.tecla2.Size = new System.Drawing.Size(69, 65);
             this.tecla2.TabIndex = 48;
             this.tecla2.TabStop = false;
+            this.tecla2.Click += new System.EventHandler(this.tecla2_Click);
             // 
             // tecla1
             // 
@@ -187,6 +197,7 @@
             this.tecla1.Size = new System.Drawing.Size(69, 65);
             this.tecla1.TabIndex = 47;
             this.tecla1.TabStop = false;
+            this.tecla1.Click += new System.EventHandler(this.tecla1_Click);
             // 
             // fotoCandidato
             // 
@@ -239,6 +250,7 @@
             this.branco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.branco.TabIndex = 42;
             this.branco.TabStop = false;
+            this.branco.Click += new System.EventHandler(this.branco_Click);
             // 
             // segDigito
             // 

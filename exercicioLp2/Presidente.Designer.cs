@@ -46,9 +46,6 @@
             this.nomeCandidato = new System.Windows.Forms.Label();
             this.nomeCargo = new System.Windows.Forms.Label();
             this.branco = new System.Windows.Forms.PictureBox();
-            this.quiDigito = new System.Windows.Forms.Label();
-            this.quaDigito = new System.Windows.Forms.Label();
-            this.terDigito = new System.Windows.Forms.Label();
             this.segDigito = new System.Windows.Forms.Label();
             this.primDigito = new System.Windows.Forms.Label();
             this.titulo = new System.Windows.Forms.Label();
@@ -78,6 +75,7 @@
             this.confirma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.confirma.TabIndex = 58;
             this.confirma.TabStop = false;
+            this.confirma.Click += new System.EventHandler(this.confirma_Click);
             // 
             // corrige
             // 
@@ -89,6 +87,7 @@
             this.corrige.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.corrige.TabIndex = 57;
             this.corrige.TabStop = false;
+            this.corrige.Click += new System.EventHandler(this.corrige_Click);
             // 
             // tecla0
             // 
@@ -99,6 +98,7 @@
             this.tecla0.Size = new System.Drawing.Size(69, 65);
             this.tecla0.TabIndex = 56;
             this.tecla0.TabStop = false;
+            this.tecla0.Click += new System.EventHandler(this.tecla0_Click);
             // 
             // tecla9
             // 
@@ -109,6 +109,7 @@
             this.tecla9.Size = new System.Drawing.Size(69, 65);
             this.tecla9.TabIndex = 55;
             this.tecla9.TabStop = false;
+            this.tecla9.Click += new System.EventHandler(this.tecla9_Click);
             // 
             // tecla8
             // 
@@ -119,6 +120,7 @@
             this.tecla8.Size = new System.Drawing.Size(69, 65);
             this.tecla8.TabIndex = 54;
             this.tecla8.TabStop = false;
+            this.tecla8.Click += new System.EventHandler(this.tecla8_Click);
             // 
             // tecla7
             // 
@@ -129,6 +131,7 @@
             this.tecla7.Size = new System.Drawing.Size(69, 65);
             this.tecla7.TabIndex = 53;
             this.tecla7.TabStop = false;
+            this.tecla7.Click += new System.EventHandler(this.tecla7_Click);
             // 
             // tecla6
             // 
@@ -139,6 +142,7 @@
             this.tecla6.Size = new System.Drawing.Size(69, 65);
             this.tecla6.TabIndex = 52;
             this.tecla6.TabStop = false;
+            this.tecla6.Click += new System.EventHandler(this.tecla6_Click);
             // 
             // tecla5
             // 
@@ -149,6 +153,7 @@
             this.tecla5.Size = new System.Drawing.Size(69, 65);
             this.tecla5.TabIndex = 51;
             this.tecla5.TabStop = false;
+            this.tecla5.Click += new System.EventHandler(this.tecla5_Click);
             // 
             // tecla4
             // 
@@ -159,6 +164,7 @@
             this.tecla4.Size = new System.Drawing.Size(69, 65);
             this.tecla4.TabIndex = 50;
             this.tecla4.TabStop = false;
+            this.tecla4.Click += new System.EventHandler(this.tecla4_Click);
             // 
             // tecla3
             // 
@@ -169,6 +175,7 @@
             this.tecla3.Size = new System.Drawing.Size(69, 65);
             this.tecla3.TabIndex = 49;
             this.tecla3.TabStop = false;
+            this.tecla3.Click += new System.EventHandler(this.tecla3_Click);
             // 
             // tecla2
             // 
@@ -179,6 +186,7 @@
             this.tecla2.Size = new System.Drawing.Size(69, 65);
             this.tecla2.TabIndex = 48;
             this.tecla2.TabStop = false;
+            this.tecla2.Click += new System.EventHandler(this.tecla2_Click);
             // 
             // tecla1
             // 
@@ -189,6 +197,7 @@
             this.tecla1.Size = new System.Drawing.Size(69, 65);
             this.tecla1.TabIndex = 47;
             this.tecla1.TabStop = false;
+            this.tecla1.Click += new System.EventHandler(this.tecla1_Click);
             // 
             // fotoCandidato
             // 
@@ -241,30 +250,7 @@
             this.branco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.branco.TabIndex = 42;
             this.branco.TabStop = false;
-            // 
-            // quiDigito
-            // 
-            this.quiDigito.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quiDigito.Location = new System.Drawing.Point(398, 203);
-            this.quiDigito.Name = "quiDigito";
-            this.quiDigito.Size = new System.Drawing.Size(37, 46);
-            this.quiDigito.TabIndex = 41;
-            // 
-            // quaDigito
-            // 
-            this.quaDigito.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quaDigito.Location = new System.Drawing.Point(352, 203);
-            this.quaDigito.Name = "quaDigito";
-            this.quaDigito.Size = new System.Drawing.Size(37, 46);
-            this.quaDigito.TabIndex = 40;
-            // 
-            // terDigito
-            // 
-            this.terDigito.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.terDigito.Location = new System.Drawing.Point(306, 203);
-            this.terDigito.Name = "terDigito";
-            this.terDigito.Size = new System.Drawing.Size(37, 46);
-            this.terDigito.TabIndex = 39;
+            this.branco.Click += new System.EventHandler(this.branco_Click);
             // 
             // segDigito
             // 
@@ -316,15 +302,13 @@
             this.Controls.Add(this.nomeCandidato);
             this.Controls.Add(this.nomeCargo);
             this.Controls.Add(this.branco);
-            this.Controls.Add(this.quiDigito);
-            this.Controls.Add(this.quaDigito);
-            this.Controls.Add(this.terDigito);
             this.Controls.Add(this.segDigito);
             this.Controls.Add(this.primDigito);
             this.Controls.Add(this.titulo);
             this.Name = "Presidente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Presidente";
+            this.Load += new System.EventHandler(this.Presidente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.confirma)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.corrige)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tecla0)).EndInit();
@@ -363,9 +347,6 @@
         private System.Windows.Forms.Label nomeCandidato;
         private System.Windows.Forms.Label nomeCargo;
         private System.Windows.Forms.PictureBox branco;
-        public System.Windows.Forms.Label quiDigito;
-        public System.Windows.Forms.Label quaDigito;
-        public System.Windows.Forms.Label terDigito;
         public System.Windows.Forms.Label segDigito;
         public System.Windows.Forms.Label primDigito;
         private System.Windows.Forms.Label titulo;

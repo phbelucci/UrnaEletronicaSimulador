@@ -23,11 +23,13 @@ namespace exercicioLp2
 
         }
 
-        private void Senador_Load(object sender, EventArgs e)
+        //define o nome que aparecerá no campo Cargo Candidato
+        private void Presidente_Load(object sender, EventArgs e)
         {
             nomeCargo.Text = "PRESIDENTE";
         }
 
+        //TECLAS BRANCO, CORRIGE E CONFIRMA
         private void branco_Click(object sender, EventArgs e)
         {
             primDigito.Text = "-";
@@ -39,6 +41,28 @@ namespace exercicioLp2
             fotoCandidato.BackgroundImage = null;
         }
 
+        private void corrige_Click(object sender, EventArgs e)
+        {
+            casaAtual = 0;
+            numeroClicado = 0;
+            primDigito.Text = null;
+            segDigito.Text = null;
+            nomeCandidato.Text = null;
+            partidoCandidato.Text = null;
+            fotoCandidato.BackgroundImage = null;
+        }
+
+
+        private void confirma_Click(object sender, EventArgs e)
+        {
+            string numeroCandidatoEscolhido = primDigito.Text + segDigito.Text;
+            MessageBox.Show("O número do candidato é: " + numeroCandidatoEscolhido);
+            Close();
+        }
+
+
+
+        //Seta o valor para cada tecla e chama a função insereNumero para preencher as casas
         private void tecla1_Click(object sender, EventArgs e)
         {
             numeroClicado = 1;
@@ -99,18 +123,8 @@ namespace exercicioLp2
             insereNumero(numeroClicado);
         }
 
-        private void corrige_Click(object sender, EventArgs e)
-        {
-            casaAtual = 0;
-            numeroClicado = 0;
-            primDigito.Text = null;
-            segDigito.Text = null;
-            terDigito.Text = null;
-            nomeCandidato.Text = null;
-            partidoCandidato.Text = null;
-            fotoCandidato.BackgroundImage = null;
-        }
 
+        //inicializa a função insereNumero e chama a conexao com BD para buscar o candidato escolhido.
         public void insereNumero(int numeroClicado)
         {
             this.numeroClicado = numeroClicado;
@@ -130,16 +144,9 @@ namespace exercicioLp2
                         segDigito.Text = Convert.ToString(numeroClicado);
                     }
                     break;
-                case 3:
-                    if ((segDigito.Text != "") && (terDigito.Text == ""))
-                    {
-                        terDigito.Text = Convert.ToString(numeroClicado);
-                    }
-                    break;
-
             }
-            string candidatoEscolhido = (primDigito.Text + segDigito.Text + terDigito.Text);
-            if (terDigito.Text != "")
+            string candidatoEscolhido = (primDigito.Text + segDigito.Text);
+            if (segDigito.Text != "")
             {
                 try
                 {
@@ -156,12 +163,6 @@ namespace exercicioLp2
             }
 
         }
-
-        private void confirma_Click(object sender, EventArgs e)
-        {
-            string numeroCandidatoEscolhido = primDigito.Text + segDigito.Text + terDigito.Text;
-            MessageBox.Show("O número do candidato é: " + numeroCandidatoEscolhido);
-            Close();
-        }
+        
     }
 }
