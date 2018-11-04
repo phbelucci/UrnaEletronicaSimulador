@@ -18,7 +18,9 @@ namespace exercicioLp2
 
         public Senador()
         {
+            
             InitializeComponent();
+            confirma.Visible = false;
             primDigito.Text = null;
             segDigito.Text = null;
             terDigito.Text = null;
@@ -35,14 +37,15 @@ namespace exercicioLp2
         //TECLAS BRANCO, CORRIGE E CONFIRMA
         private void branco_Click(object sender, EventArgs e)
         {
-            primDigito.Text = "-";
-            segDigito.Text = "-";
-            terDigito.Text = "-";
+            primDigito.Text = "9";
+            segDigito.Text = "9";
+            terDigito.Text = "9";
             casaAtual = 0;
             numeroClicado = 0;
             nomeCandidato.Text = "BRANCO";
             partidoCandidato.Text = "BRANCO";
             fotoCandidato.BackgroundImage = null;
+            confirma.Visible = true;
         }
 
         private void corrige_Click(object sender, EventArgs e)
@@ -60,8 +63,19 @@ namespace exercicioLp2
         private void confirma_Click(object sender, EventArgs e)
         {
             string numeroCandidatoEscolhido = primDigito.Text + segDigito.Text + terDigito.Text;
-            MessageBox.Show("O número do candidato é: " + numeroCandidatoEscolhido);
-            Close();
+            
+            if (numeroCandidatoEscolhido == "999")
+            {
+                numeroCandidatoEscolhido = "99999";
+                Conexao conexao1 = new Conexao(numeroCandidatoEscolhido, "BRANCO");
+                conexao1.conectarIncrementaVoto(numeroCandidatoEscolhido, "BRANCO");
+                Close();
+            }
+            else { 
+                Conexao conexao1 = new Conexao(numeroCandidatoEscolhido, "SENADOR");
+                conexao1.conectarIncrementaVoto(numeroCandidatoEscolhido, "SENADOR");
+                Close();
+            }
         }
 
 
@@ -162,17 +176,20 @@ namespace exercicioLp2
 
             if (terDigito.Text != "")
             {
-                try { 
+                try {
 
                     //objeto que conecta com BD
+                    confirma.Visible = true;
                     Conexao conectar = new Conexao(candidatoEscolhido,"SENADOR");
                     nomeCandidato.Text = conectar.getNome();
                     partidoCandidato.Text = conectar.getPartido();
-                    fotoCandidato.BackgroundImage = Image.FromFile(conectar.getFoto());
+                    fotoCandidato.BackgroundImage = Image.FromFile("@"+conectar.getFoto());
+                    
                 }
                 catch
                 {
-                    fotoCandidato.BackgroundImage = Image.FromFile(@"C:\Users\phbel\Desktop\ADS-2018-IFSP\2_SEMESTRE\LP2\LISTA_URNA\exercicioLp2\img\avatar.png");
+                    Console.WriteLine("erro foto");
+                    fotoCandidato.BackgroundImage = null;
                 }
 
 

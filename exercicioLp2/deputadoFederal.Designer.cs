@@ -157,6 +157,7 @@
             this.fotoCandidato.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.fotoCandidato.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("fotoCandidato.BackgroundImage")));
             this.fotoCandidato.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.fotoCandidato.Location = new System.Drawing.Point(499, 57);
             this.fotoCandidato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

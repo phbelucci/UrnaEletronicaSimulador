@@ -201,6 +201,7 @@
             // 
             // fotoCandidato
             // 
+            this.fotoCandidato.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("fotoCandidato.BackgroundImage")));
             this.fotoCandidato.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.fotoCandidato.Location = new System.Drawing.Point(496, 59);
             this.fotoCandidato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

@@ -16,9 +16,11 @@ namespace exercicioLp2
         public int numeroClicado = 0;
         public int casaAtual = 0;
         
+
         public deputadoFederal()
         {
             InitializeComponent();
+            confirma.Visible = false;
             partidoCandidato.Text = null;
             primDigito.Text = null;
             segDigito.Text = null;
@@ -36,15 +38,16 @@ namespace exercicioLp2
         //TECLAS BRANCO, CORRIGE E CONFIRMA
         private void branco_Click(object sender, EventArgs e)
         {
-            primDigito.Text = "-";
-            segDigito.Text = "-";
-            terDigito.Text = "-";
-            quaDigito.Text = "-"; 
+            primDigito.Text = "9";
+            segDigito.Text = "9";
+            terDigito.Text = "9";
+            quaDigito.Text = "9";
             casaAtual = 0;
             numeroClicado = 0;
             nomeCandidato.Text = "BRANCO";
             partidoCandidato.Text = "BRANCO";
             fotoCandidato.BackgroundImage = null;
+            confirma.Visible = true;
 
         }
 
@@ -65,7 +68,19 @@ namespace exercicioLp2
         private void confirma_Click(object sender, EventArgs e)
         {
             string numeroCandidatoEscolhido = primDigito.Text + segDigito.Text + terDigito.Text + quaDigito.Text;
-            MessageBox.Show("O número do candidato é: " + numeroCandidatoEscolhido);
+          
+            if (numeroCandidatoEscolhido == "9999")
+            {
+                brancoNulo incrementaBranco = new brancoNulo();
+                incrementaBranco.setBranco();
+                Console.WriteLine(incrementaBranco.getBranco());
+            }
+            else if (numeroCandidatoEscolhido == "0000")
+            {
+                brancoNulo incrementaNulo = new brancoNulo();
+                incrementaNulo.setNulo();
+                Console.WriteLine(incrementaNulo.getNulo());
+            }
             Close();
         }
 
@@ -165,26 +180,29 @@ namespace exercicioLp2
                     break;
                 
             }
-            string candidatoEscolhido = (primDigito.Text + segDigito.Text + terDigito.Text + quaDigito.Text);
+            
             if (quaDigito.Text != "") {
 
-
+                string candidatoEscolhido = (primDigito.Text + segDigito.Text + terDigito.Text + quaDigito.Text);
+                
                 try
                 {
+                    confirma.Visible = true;
                     Conexao conectar = new Conexao(candidatoEscolhido, "DEPUTADO FEDERAL");
                     nomeCandidato.Text = conectar.getNome();
                     partidoCandidato.Text = conectar.getPartido();
-                    fotoCandidato.BackgroundImage = Image.FromFile(conectar.getFoto());
+                    fotoCandidato.BackgroundImage = Image.FromFile(@"avatar.png");
                 }
                 catch
                 {
-                    
+
+                    Console.WriteLine("erro foto");
                     fotoCandidato.BackgroundImage = null;
+                  
                 }
             }
 
         }
-
     }
     
 }

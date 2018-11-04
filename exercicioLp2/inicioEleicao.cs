@@ -15,23 +15,27 @@ namespace exercicioLp2
     {
         public inicioEleicao()
         {
-            InitializeComponent();  
-            
+            InitializeComponent();
+            ConexaoZerezima contabilizaVotos = new ConexaoZerezima();
+            dataHoraInicio.Text = DateTime.Now.ToShortDateString() + " -- " + DateTime.Now.ToLongTimeString();
+            numVotosDepEst.Text = Convert.ToString(contabilizaVotos.getVotosBD());
+            numVotosDepFederal.Text = Convert.ToString(contabilizaVotos.getVotosBD());
+            numVotosSenador.Text = Convert.ToString(contabilizaVotos.getVotosBD());
+            numVotosGover.Text = Convert.ToString(contabilizaVotos.getVotosBD());
+            numVotosPres.Text = Convert.ToString(contabilizaVotos.getVotosBD());
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Close();     
+            
+            Close();
+              
         }
 
         private void inicioEleicao_Load(object sender, EventArgs e)
         {
-            dataHoraInicio.Text = DateTime.Now.ToShortDateString()+" -- " +DateTime.Now.ToLongTimeString();
-            numVotosDepEst.Text = "0";
-            numVotosDepFederal.Text = "0";
-            numVotosSenador.Text = "0";
-            numVotosGover.Text = "0";
-            numVotosPres.Text = "0";
+            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
